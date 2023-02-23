@@ -1,0 +1,7 @@
+{
+  "name": "training-tagum",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}

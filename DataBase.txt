@@ -1,0 +1,32 @@
+CREATE TABLE users (
+id int not null unique auto_increment,
+first_name varchar(50),
+last_name varchar(50),
+email varchar(50),
+password varchar(50),
+PRIMARY KEY (id)
+);
+
+CREATE TABLE grades (
+id int not null unique auto_increment,
+user_id int,
+subject varchar(50),
+grade float,
+remarks enum('PASSED','FAILED'),
+PRIMARY KEY (id),
+FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+
+
+
+INSERT INTO USERS(first_name, last_name, email, password) 
+VALUES ('James','Gosling','jamesgoslign@email.com','password'), ('Nikola','Tesla','nikolatesla@email.com','password');
+
+insert into grades VALUES
+('', 1, 'Thermodynamics', 99, 'PASSED'),
+('', 1, 'Electricity and Magnetism', 88, 'PASSED'),
+('', 1, 'Calculus', 74, 'FAILED'),
+('', 2, 'Thermodynamics', 99, 'PASSED'),
+('', 2, 'Electricity and Magnetism', 88, 'PASSED'),
+('', 2, 'Calculus', 74, 'FAILED');
